@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page" id="auth-page">
+    <!-- Theme Switcher Button -->
+    <div class="theme-switch">
+        <button id="theme-toggle">Switch to Dark Theme</button>
+    </div>
+
+    <!-- Login Form (Visible by default) -->
+    <div class="auth-container" id="login-box">
+        <h2>Login</h2>
+        <form class="auth-form" id="login-form">
+            <input type="text" placeholder="Username" id="login-username" required>
+            <input type="password" placeholder="Password" id="login-password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+    </div>
+
+    <!-- Sign-Up Form (Hidden by default) -->
+    <div class="auth-container signup-container" id="signup-box" style="display: none;">
+        <h2>Create Account</h2>
+        <form class="auth-form" id="signup-form">
+            <input type="text" placeholder="New Username" required>
+            <input type="password" placeholder="New Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+    </div>
+
+    <script>
+        // JavaScript to toggle between login and signup forms
+        const signupBox = document.getElementById('signup-box');
+        const loginBox = document.getElementById('login-box');
+        const showSignup = document.getElementById('show-signup');
+        const showLogin = document.getElementById('show-login');
+
+        // Show Signup form, hide Login form
+        showSignup.addEventListener('click', function (e) {
+            e.preventDefault();
+            loginBox.style.display = 'none';
+            signupBox.style.display = 'block';
+        });
+
+        // Show Login form, hide Signup form
+        showLogin.addEventListener('click', function (e) {
+            e.preventDefault();
+            signupBox.style.display = 'none';
+            loginBox.style.display = 'block';
+        });
+
+        // Form Submission and Redirection to home.html after login
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            if (username && password) {
+                window.location.href = 'home.html';  // Redirect to home page
+            } else {
+                alert('Please enter valid login details.');
+            }
+        });
+
+        // Theme Switcher: Toggle between light and dark themes
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const authPage = document.getElementById('auth-page');
+
+        themeToggleBtn.addEventListener('click', function () {
+            authPage.classList.toggle('dark-theme');
+            if (authPage.classList.contains('dark-theme')) {
+                themeToggleBtn.textContent = 'Switch to Light Theme';
+            } else {
+                themeToggleBtn.textContent = 'Switch to Dark Theme';
+            }
+        });
+    </script>
+</body>
+</html>

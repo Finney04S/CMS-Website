@@ -1,0 +1,50 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff007f, #6a00ff); /* Gradient background for the body */
+    color: #ffffff; /* Default text color for body */
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background for header */
+    padding: 15px; /* Padding for spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+    color: white; /* White text color for header */
+}
+
+/* Posts Area Styles */
+.posts-area {
+    width: 80%;
+    margin: auto;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for the table */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Table Header Styles */
+th {
+    background-color: #6A0DAD; /* Purple background for table headers */
+    color: white; /* White text color for table headers */
+}
+
+/* Table Data Styles */
+td {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque white for table data cells */
+    color: white; /* White text color for table data */
+}

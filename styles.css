@@ -1,0 +1,138 @@
+/* Global Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff007f, #6a00ff);
+    color: #ffffff; /* White text for contrast */
+}
+
+/* Header Styling */
+.header {
+    background-color: rgba(0, 0, 0, 0.85); /* Darker header for contrast */
+    padding: 20px 40px; /* Added padding for better spacing */
+    display: flex;
+    justify-content: space-between; /* Space between title and user container */
+    align-items: center; /* Center items vertically */
+    border-bottom: 2px solid #ff69b4; /* Subtle accent border */
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0; /* Remove default margin */
+}
+
+/* User Container */
+.user-container {
+    position: relative; /* Positioning for dropdown */
+}
+
+.username {
+    cursor: pointer; /* Pointer cursor for interactivity */
+    font-weight: bold; /* Bold username for emphasis */
+}
+
+.dropdown {
+    position: relative; /* Positioning for dropdown */
+    display: inline-block; /* Inline block for proper alignment */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position below the username */
+    background-color: rgba(255, 255, 255, 0.9); /* Background color */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 1; /* Ensure it appears above other elements */
+}
+
+.dropdown-content.show {
+    display: block; 
+    background-color: #ff69b4;/* Show when toggled */
+}
+
+.nav-item {
+    padding: 10px; /* Padding for clickable area */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+.nav-item:hover {
+    background-color: #ff0099; /* Highlight on hover */
+}
+
+/* Hero Section Enhancements */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px; /* Added padding for spacing */
+}
+
+/* Hero Section Title */
+.hero-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px; /* Spacing below title */
+}
+
+.hero-section p {
+    font-size: 1.2em;
+}
+
+/* Content Boxes Styling */
+.content-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque for contrast */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 30px; /* Increased padding for better spacing inside boxes */
+    width: calc(30% - 40px); /* Responsive width with margin */
+    margin: 20px; /* Margin between boxes */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Deeper shadow on hover */
+}
+
+.box i {
+   font-size: 60px; /* Increased icon size for better visibility */
+   color: #ff69b4; /* Consistent icon color with theme */
+}
+
+/* Button Styling Enhancements */
+button {
+   padding: 12px 20px; 
+   background-color: #ff007f; 
+   color: white; 
+   border-radius: 8px; 
+   border: none; 
+   cursor: pointer; 
+   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; 
+   font-size: 1em;
+   font-weight: bold; /* Bold text for buttons */
+}
+
+button:hover {
+   background-color: #ff69b4; 
+   transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .content-box {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center; /* Center boxes in column layout */
+        width: auto; /* Reset width for responsiveness */
+        padding-top:20px
+    }
+
+    .box {
+        width: calc(90% - 40px); /* Full width with margins on smaller screens */
+        margin-bottom: 20px; /* Margin below each box in column layout */
+        text-align:center
+     }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body>
+
+    <!-- Main Section: Content Area -->
+    <main>
+        <div class="header">
+            <h1>Content Management System</h1>
+            <div class="user-container dropdown">
+                <span class="username" onclick="toggleDropdown()">Frost</span>
+                <div id="dropdown-menu" class="dropdown-content hidden">
+                    <div id="logout" class="nav-item" onclick="logout()">Logout</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h2>Welcome to the Content Management System</h2>
+            <!-- Content Boxes -->
+            <div class="content-box">
+                <div class="box">
+                    <i class="fas fa-cogs"></i>
+                    <h3>New Content</h3>
+                    <p>Track and manage your postal services.</p>
+                    <button onclick="location.href='form.html'"> + Create</button> <!-- Redirect to form.html -->
+                </div>
+                <div class="box">
+                    <i class="fas fa-history"></i>
+                    <h3>Content History</h3>
+                    <p>Check your past orders and delivery history.</p>
+                    <button onclick="location.href='data.html'">Show -></button>
+                </div>
+                <div class="box">
+                    <i class="fas fa-user-cog"></i>
+                    <h3>Account Settings</h3>
+                    <p>Update your profile and account preferences.</p>
+                    <button>Manage Settings</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript File -->
+    <script>
+
+        // Logout function
+        function logout() {
+            // Redirect to index.html on logout
+            window.location.href = 'index.html';
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.classList.toggle('show'); // Toggle visibility
+        }
+
+        // Close the dropdown if clicked outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.username')) {
+                const dropdown = document.getElementById('dropdown-menu');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show'); // Hide dropdown if it's open
+                }
+            }
+        };
+    </script>
+
+</body>
+</html>

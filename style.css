@@ -1,0 +1,115 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Gradient Background for Authentication Page */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, rgb(88, 2, 48)); /* Purple-Blue Gradient */
+    transition: background 0.5s ease;
+}
+
+/* Dark Theme Background */
+.auth-page.dark-theme {
+    background: linear-gradient(135deg, #141e30, deeppink); /* Darker Gradient */
+}
+
+/* Authentication Form Styling */
+.auth-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(106, 0, 110, 0.679);
+    width: 300px;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+/* Dark Theme for Auth Container */
+.auth-page.dark-theme .auth-container {
+    background-color: #5c005a;
+    color: white;
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+/* Input Fields */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.auth-form button:hover {
+    background-color: #45a049;
+}
+
+/* Sign-Up Link */
+.auth-container p {
+    margin-top: 20px;
+}
+
+.auth-container a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+/* Theme Switcher Button */
+.theme-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-toggle {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #6a11cb;
+    border: 2px solid #6a11cb;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #6a11cb;
+    color: #fff;
+}
+
+/* Dark Theme Toggle Button */
+.auth-page.dark-theme #theme-toggle {
+    background-color: #243b55;
+    color: #fff;
+    border-color: #243b55;
+}
+
+.auth-page.dark-theme #theme-toggle:hover {
+    background-color: white;
+    color: #243b55;
+}
